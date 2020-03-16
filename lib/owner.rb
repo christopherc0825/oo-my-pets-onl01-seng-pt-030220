@@ -52,16 +52,19 @@ class Owner
     cats.each {|cat| cat.mood = "happy"}
   end
 
-  def pets
-    p = []
-    p << cats
-    p << dogs
-  end
-
   def sell_pets
-    pets.each do |p|
+    cats.each do |p|
       p.owner = nil
       p.mood = "nervous"
     end
+
+    dogs.each do |p|
+      p.owner = nil
+      p.mood = "nervous"
+    end
+  end
+
+  def list_pets
+    "I have #{dogs.count} dog(s), and #{cats.count} cat(s)."
   end
 end
