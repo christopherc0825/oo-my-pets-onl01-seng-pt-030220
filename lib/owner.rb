@@ -52,13 +52,14 @@ class Owner
     cats.each {|cat| cat.mood = "happy"}
   end
 
-  def sell_pets
-    cats.each do |p|
-      p.owner = nil
-      p.mood = "nervous"
-    end
+  def pets
+    p = []
+    p << cats
+    p << dogs
+  end
 
-    dogs.each do |p|
+  def sell_pets
+    pets.each do |p|
       p.owner = nil
       p.mood = "nervous"
     end
